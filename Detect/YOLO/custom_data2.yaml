@@ -1,0 +1,8 @@
+train: data/train/images
+val: data/val/images
+
+# number of classes
+nc: 2
+
+# class names
+names: ['coleo','lepi']
