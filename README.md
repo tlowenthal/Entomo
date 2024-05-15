@@ -7,13 +7,13 @@ From stacking and annotation to the use of algorithm of detection, this toolbox 
 
 Explore the repository, leverage the tools, and contribute to the advancement of entomological research with the power of data-driven insights.
 ## Tools Overview
-###Image Stacking Tool
+### Image Stacking Tool
 
 The Image Stacking Tool included in this repository offers a solution for merging multiple images together, particularly useful in entomological photography where depth of field can be an issue. This tool enables users to combine a series of photographs into a single, high-quality composite image, ensuring that all parts of the subject are in focus.
-###Image Annotation Tool
+### Image Annotation Tool
 
 Our Image Annotation Tool simplifies the process of labeling and annotating images, a fundamental step in training machine learning models for object detection tasks. With this tool, users can easily draw bounding boxes around insects within images, providing the necessary annotations for training robust detection algorithms.
-###Insect Detection Algorithms
+### Insect Detection Algorithms
 
 Within this repository, you'll find pre-trained models for two common orders of insects: Coleoptera (beetles) and Lepidoptera (butterflies and moths). These models are ready to use out of the box, allowing for quick and accurate detection of these insect groups within entomological box images.
 
