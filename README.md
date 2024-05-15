@@ -1,7 +1,7 @@
 # AI in entomology
 Welcome to this GitHub repository dedicated to artificial intelligence in entomology !
 
-This repository houses a collection of tools designed to handle numerical data from entomological collections. Whether you're a researcher, entomologist, or data enthusiast, this toolbox provides a range of utilities tailored to streamline the analysis and management of insect-related data.
+This repository houses a collection of tools designed to handle numerical data from entomological collections. Whether you're a researcher, entomologist, or data enthusiast, this toolbox provides a range of utilities tailored to analysis and management of insect-related data.
 
 From stacking and annotation to the use of algorithm of detection, this toolbox offers a comprehensive suite of resources to support your work in the field of entomology.
 
