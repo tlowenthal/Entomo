@@ -33,7 +33,25 @@ Two windows will appear to visualize parameter calibration in order to automatic
  - the minimum and maximum area of the interior of a contour can be defined to be considered a detection using the following 2 cursus
  - the following four cursuers are used to adjust the size and position of bounding boxes
  - HierearchyLevel should be set to 1 when the contours of the entomological box are fully (continuously) taken into account by the HSV mask.
- 
+2. Once the parameters have been calibrated, click on the button "Freeze parameters"
+3. You can deletete wrong detections by listing their identifiers (separated with ",") in de field and clicking on "Delete".
+4-1. You can add detections by drawing bounding boxes on each insect :
+ - Click on the "Add detections (ROI)" button to launch the selection window (ROI)
+ - Select the ROI with your mouse
+ - Press Enter or the space bar to validate the ROI
+ - Repeat step 1 and 2 for all detections you want
+ - Do not forget to press ESC to save all detections
+4-2. If the insects have similar sizes, you can go faster by clicking on the insect to add a detection
+ - You need to do point 4-1 for a single insect to define the detection size which will apply to other insects
+ - Then, click on the "Add detections (click)" button to launch the selection window (click)
+ - Click on the center of each insect with the dimension defined above
+ - Do not forget to press ESC to save all detections
+ - Note that if there are several groups of insects of the same size, you can repeat the process, each time defining a new size.
 
+It's important to know that adding and deleting detection can be done in any order and as many times as desired.
+An image showing the detections, their respective IDs and the total number of detections is generated after each detection is added or deleted, so you can see where you stand.
 
-
+5. Once all the insects have been annotated correctly, click on the "save all" button to generate the txt annotation file, with each line included :
+- the object class (0 = insect in this case)
+- normalized coordinates x and y
+- normalized dimensions w and h
