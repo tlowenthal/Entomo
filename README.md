@@ -24,7 +24,19 @@ By offering pre-trained models as well as the flexibility to stack, annotate and
 ## Use
 ### Image Stacking Tool
 
-To stack photos, you simply has to run this command : python auto_stack.py <path to the folder> <number of pictures per zone>
+To stack photos of several boxes, you simply has to run this command : python auto_stack.py 'path to the folder' 'number of pictures per zone' where :
+ - 'path to the folder' points to the folder containing all the boxes to be stacked. it must take the following form :
+   Folder
+   ├─ Box 1
+   │  ├─ Image 1
+   │  ├─ Image 2
+   │  └─ ...
+   ├─ Box 2
+   │  ├─ Image 1
+   │  ├─ Image 2
+   │  └─ ...
+   └─ ...
+ - 'number of pictures per zone' is the number of picture of the same zone taken at differents focus
 
 ### Image Annotation Tool
 Lauch the GUI using this command : python annotation.py
