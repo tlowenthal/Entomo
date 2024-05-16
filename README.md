@@ -35,14 +35,14 @@ Two windows will appear to visualize parameter calibration in order to automatic
  - HierearchyLevel should be set to 1 when the contours of the entomological box are fully (continuously) taken into account by the HSV mask.
 2. Once the parameters have been calibrated, click on the button "Freeze parameters"
 3. You can deletete wrong detections by listing their identifiers (separated with ",") in de field and clicking on "Delete".
-4-1. You can add detections by drawing bounding boxes on each insect :
+4. a) You can add detections by drawing bounding boxes on each insect :
  - Click on the "Add detections (ROI)" button to launch the selection window (ROI)
  - Select the ROI with your mouse
  - Press Enter or the space bar to validate the ROI
  - Repeat step 1 and 2 for all detections you want
  - Do not forget to press ESC to save all detections
-4-2. If the insects have similar sizes, you can go faster by clicking on the insect to add a detection
- - You need to do point 4-1 for a single insect to define the detection size which will apply to other insects
+4. b) If the insects have similar sizes, you can go faster by clicking on the insect to add a detection
+ - You need to do point 4. a) for a single insect to define the detection size which will apply to other insects
  - Then, click on the "Add detections (click)" button to launch the selection window (click)
  - Click on the center of each insect with the dimension defined above
  - Do not forget to press ESC to save all detections
