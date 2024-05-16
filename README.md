@@ -20,3 +20,20 @@ Within this repository, you'll find pre-trained models for two common orders of 
 Additionally, we provide resources and guidance on how to train your own custom detection models. Whether you're interested in detecting other insect orders, specific species, or unique characteristics within your entomological specimens, our repository offers the framework and tools to create tailored detection models to suit your research needs.
 
 By offering pre-trained models as well as the flexibility to stack, annotate and create custom models , we aim to empower researchers and enthusiasts in their efforts to study and conserve insect biodiversity.
+
+## Utilisation
+### Image Stacking Tool
+
+Lauch the GUI using this command : python annotation.py
+
+1. Choose the image that you want to annotate
+Two windows will appear to visualize parameter calibration in order to automatically annotate as many insects as possible :
+ - the minimum and maximum values of the HSV space (Hue,Saturation,Value) can be selected using the first 6 cursors
+ - the following three sliders influence the contours of the positive zones of the HSV mask
+ - the minimum and maximum area of the interior of a contour can be defined to be considered a detection using the following 2 cursus
+ - the following four cursuers are used to adjust the size and position of bounding boxes
+ - HierearchyLevel should be set to 1 when the contours of the entomological box are fully (continuously) taken into account by the HSV mask.
+ 
+
+
+
