@@ -21,9 +21,12 @@ Additionally, we provide resources and guidance on how to train your own custom 
 
 By offering pre-trained models as well as the flexibility to stack, annotate and create custom models , we aim to empower researchers and enthusiasts in their efforts to study and conserve insect biodiversity.
 
-## Utilisation
+## Use
 ### Image Stacking Tool
 
+To stack photos, you simply has to run this command : python auto_stack.py <path to the folder> <number of pictures per zone>
+
+### Image Annotation Tool
 Lauch the GUI using this command : python annotation.py
 
 1. Choose the image that you want to annotate
@@ -54,4 +57,4 @@ An image showing the detections, their respective IDs and the total number of de
 5. Once all the insects have been annotated correctly, click on the "save all" button to generate the txt annotation file, with each line included :
 - the object class (0 = insect in this case)
 - normalized coordinates x and y
-- normalized dimensions w and h
+- normalized dimensions width and height
