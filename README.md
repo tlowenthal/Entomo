@@ -29,13 +29,13 @@ To stack photos of several boxes, you simply has to run this command : `python a
   
 Folder  
    ├─ Box 1  
-   │  ├─ Image 1  
-   │  ├─ Image 2  
-   │  └─ ...  
+   │  &ensp;  ├─ Image 1  
+   │  &ensp;  ├─ Image 2  
+   │   &ensp; └─ ...  
    ├─ Box 2  
-   │  ├─ Image 1  
-   │  ├─ Image 2  
-   │  └─ ...  
+   │  &ensp;  ├─ Image 1  
+   │  &ensp;  ├─ Image 2  
+   │  &ensp;  └─ ...  
    └─ ...  
    Please organize the images so that those belonging to the same zone are ordered consecutively. 
  - 'number of pictures per zone' is the number of picture of the same zone taken at differents focus
@@ -91,23 +91,24 @@ About custom_data.yaml : this file is used to specify details about the custom d
  - Class number and names : Here, two models have 1 class "insect" (coleo.pt and lepido.pt) and the other has 2 classes, "coleo" and "lepido" (coleo_lepido.pt)
  - Image Paths : Paths to the images of the train and validation dataset, it must take the following form :
   
-   data 
-   ├─ train 
-   │  ├─ images  
-   │  │  ├─ name1.JPG  
-   │  │  ├─ name2.JPG  
-   │  │  └─ ...  
-   │  └─ labels  
-   │     ├─ name1.txt  
-   │     ├─ name2.txt  
-   │     └─ ...  
+   data
+     
+   ├─ train  
+   │&emsp; ├─ images  
+   │&emsp; │ &ensp; ├─ name1.JPG  
+   │&emsp; │ &ensp; ├─ name2.JPG  
+   │&emsp; │ &ensp; └─ ...  
+   │&emsp; └─ labels  
+   │&emsp;&emsp;&emsp; ├─ name1.txt  
+   │&emsp;&emsp;&emsp; ├─ name2.txt  
+   │&emsp;&emsp;&emsp; └─ ...  
    └─ val  
-      ├─ images  
-      │  ├─ name1.JPG  
-      │  ├─ name2.JPG  
-      │  └─ ...  
-      └─ labels  
-         ├─ name1.txt  
-         ├─ name2.txt  
-         └─ ...  
+    &emsp;&emsp;   ├─ images  
+    &emsp;&emsp;   │&ensp;    ├─ name1.JPG  
+    &emsp;&emsp;   │&ensp;    ├─ name2.JPG  
+    &emsp;&emsp;   │&ensp;    └─ ...  
+    &emsp;&emsp;   └─ labels  
+    &emsp;&emsp;&emsp;&emsp;        ├─ name1.txt  
+    &emsp;&emsp;&emsp;&emsp;        ├─ name2.txt  
+     &emsp;&emsp;&emsp;&emsp;       └─ ...  
  
