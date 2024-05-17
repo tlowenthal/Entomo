@@ -11,7 +11,7 @@ from PIL import Image
 model = YOLO(sys.argv[1])
 #get predicted bounding box data
 data_test = sys.argv[2]
-results = model.predict(source=data_test, conf=float(sys.argv[3]), imgsz=2000, iou=float(sys.argv[4]), max_det=1000)
+#results = model.predict(source=data_test, conf=float(sys.argv[3]), imgsz=2000, iou=float(sys.argv[4]), max_det=1000)
 
 fichiers = sorted(os.listdir(data_test))
 #file for stats
@@ -29,6 +29,7 @@ with open(fichier_existe, mode='a', newline='') as fichier_csv:
         img_temp = Image.open(os.path.join(data_test,path))
         pix_x, pix_y = img_temp.size
         #number of insects detected
+        results = model.predict(source=img_temp, conf=float(sys.argv[3]), imgsz=2000, iou=float(sys.argv[4]), max_det=1000)
         nb = len(results[i])
         w_tot = 0
         h_tot = 0
