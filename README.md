@@ -84,4 +84,30 @@ This line was used to train the attached models but several values can be change
  - model= : you can use different model size (see : https://docs.ultralytics.com/models/yolov8/#performance-metrics)
  - imgsz= : this is the most restrictive argument, it corresponds to the size in pixels of the images input to the model,
 the higher it is, the more precise the detection will be but will require significant resources. Using the Lucia supercomputer the value of 2000 could be reached, with a standard computer this value must be set much lower otherwise you will get an out of memory error.
- - device= : Using Lucia,  4 GPU's was used
+ - device= : depend on your configuration. Here we use 4 GPU's
+ - close_mosaic= : Disables data augmentation over the last N epochs to stabilize training before it is completed. Here, 100 epochs - 100 close_mosaic epochs = 0 epochs of data augmentation because all the photos of the entomological boxes have the same layout and location so no need to augment the data.
+
+About custom_data.yaml : this file is used to specify details about the custom dataset used for model training. It contains : 
+ - Class number and names : Here, two models have 1 class "insect" (coleo.pt and lepido.pt) and the other has 2 classes, "coleo" and "lepido" (coleo_lepido.pt)
+ - Image Paths : Paths to the images of the train and validation dataset, it must take the following form :
+  
+   data 
+   ├─ train 
+   │  ├─ images  
+   │  │  ├─ name1.JPG  
+   │  │  ├─ name2.JPG  
+   │  │  └─ ...  
+   │  └─ labels  
+   │     ├─ name1.txt  
+   │     ├─ name2.txt  
+   │     └─ ...  
+   └─ val  
+      ├─ images  
+      │  ├─ name1.JPG  
+      │  ├─ name2.JPG  
+      │  └─ ...  
+      └─ labels  
+         ├─ name1.txt  
+         ├─ name2.txt  
+         └─ ...  
+ 
