@@ -24,7 +24,7 @@ By offering pre-trained models as well as the flexibility to stack, annotate and
 ## Use
 ### Image Stacking Tool
 
-To stack photos of several boxes, you simply has to run this command : python auto_stack.py 'path to the folder' 'number of pictures per zone' where :
+To stack photos of several boxes, you simply has to run this command : `python auto_stack.py <path to the folder> <number of pictures per zone>` where :
  - 'path to the folder' points to the folder containing all the boxes to be stacked. it must take the following form :
   
 Folder  
@@ -41,7 +41,7 @@ Folder
  - 'number of pictures per zone' is the number of picture of the same zone taken at differents focus
 
 ### Image Annotation Tool
-Lauch the GUI using this command : python annotation.py
+Lauch the GUI using this command : `python annotation.py`
 
 1. Choose the image that you want to annotate
 Two windows will appear to visualize parameter calibration in order to automatically annotate as many insects as possible :
@@ -76,13 +76,12 @@ An image showing the detections, their respective IDs and the total number of de
 Two algorithms using different approaches were used to carry out the detection task : YOLO (You Only Look Once) is a fast object detection method that processes the image in a single pass with a single convolutional network, while Faster R-CNN (Region-based Convolutional Neural Networks) uses a two-pass approach. stages with a region proposal network followed by a classification network for more precise but slower detection.
 #### YOLO
 To use YOLO you first need to install the package called "Ultralytics". 
-You can do that using this command line : pip install ultralytics
+You can do that using this command line : `pip install ultralytics`
 
 1. TRAIN : to train a pretrained model on a custom dataset, simply run this command line : 
-yolo task=detect mode=train model=yolov8x.pt data=custom_data.yaml epochs=100 imgsz=2000 plots=True device=0,1,2,3 close_mosaic=100
+`yolo task=detect mode=train model=yolov8x.pt data=custom_data.yaml epochs=100 imgsz=2000 plots=True device=0,1,2,3 close_mosaic=100`
 This line was used to train the attached models but several values can be changed depending on your usage :
  - model= : you can use different model size (see : https://docs.ultralytics.com/models/yolov8/#performance-metrics)
  - imgsz= : this is the most restrictive argument, it corresponds to the size in pixels of the images input to the model,
 the higher it is, the more precise the detection will be but will require significant resources. Using the Lucia supercomputer the value of 2000 could be reached, with a standard computer this value must be set much lower otherwise you will get an out of memory error.
  - device= : Using Lucia,  4 GPU's was used
-
