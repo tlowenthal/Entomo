@@ -116,6 +116,8 @@ About custom_data.yaml : this file is used to specify details about the custom d
     &emsp;&emsp;&emsp;&emsp;        ├─ name2.txt  
      &emsp;&emsp;&emsp;&emsp;       └─ ...  
  
+the output model will be in `runs/detect/train_x_/weights/best.pt`
+ 
  2. Test (Visualization) : if you want to visualize the result of running YOLO on non-view images, run this command
  `yolo task=detect mode=predict model=model.pt conf=0.5 source=folder save=True imgsz=2000 iou=0 max_det=1000 show_label=False show_conf=False line_width=5`  
  - replace model.pt by the model you want to test
@@ -125,5 +127,11 @@ About custom_data.yaml : this file is used to specify details about the custom d
  - iou is the overlap rate allowed between 2 objects, 0 is for no overlap. You must adapt this value depending on the overlap present on the entomological boxes
  - you can also adapt the maximum number of detections allowed, by default, it is 300, and since many boxes contain more than 300 this value was set to 1000.
  - adapt the last 3 visualization parameters to your convenience
+
+the output images will be in `runs/detect/predict_x_/`
  
- 3. Test (CSV) : 
+ 3. Test (CSV) : if you want to save the number of insects detected as well as several information relating to the size of the detections in a CSV file, the process is a bit different. Run the command  
+ `python yolo_csv.py <model.pt> <folder> <conf> <iou> <out.csv>`  
+as for the point above you must specify the model, the folder containing the test images, the confidence rate and the overlap rate. This time if you will have to specify in addition to that the name of the output csv file
+ 
+
