@@ -116,3 +116,14 @@ About custom_data.yaml : this file is used to specify details about the custom d
     &emsp;&emsp;&emsp;&emsp;        ├─ name2.txt  
      &emsp;&emsp;&emsp;&emsp;       └─ ...  
  
+ 2. Test (Visualization) : if you want to visualize the result of running YOLO on non-view images, run this command
+ `yolo task=detect mode=predict model=model.pt conf=0.5 source=folder save=True imgsz=2000 iou=0 max_det=1000 show_label=False show_conf=False line_width=5`  
+ - replace model.pt by the model you want to test
+ - replace folder by the name of the folder that contains non-view images
+ - try different confidence rates to see which is the most appropriate for the future
+ - /!\ you must use the same imsize value as that which was used for training (for attached models imgsz=2000)
+ - iou is the overlap rate allowed between 2 objects, 0 is for no overlap. You must adapt this value depending on the overlap present on the entomological boxes
+ - you can also adapt the maximum number of detections allowed, by default, it is 300, and since many boxes contain more than 300 this value was set to 1000.
+ - adapt the last 3 visualization parameters to your convenience
+ 
+ 3. Test (CSV) : 
