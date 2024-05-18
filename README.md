@@ -137,12 +137,15 @@ as for the point above you must specify the model, the test folder containing th
 #### Faster R-CNN
 To use faster r cnn launch the following python scripts
 
-1. Train : run `python frcnn_train.py <path to image folder> <path to label folder> <model.pth>`  
+1. Train : run  
+   `python frcnn_train.py <path to image folder> <path to label folder> <model.pth>`  
  - the images and labels must be contained in the same order for both folders. A simple solution is to keep the same name, and only have the extension which differs e.g : name1.JPG and name1.txt, as for YOLO.
  - specify the name of the .pth model you want to create
 
-2. Test (Vizualisation) : run `python frcnn_test.py <model.pth> <path to test folder> <conf> <iou> <path to out folder>`  
+2. Test (Vizualisation) : run  
+   `python frcnn_test.py <model.pth> <path to test folder> <conf> <iou> <path to out folder>`  
  - as for YOLO you have to specify the model, the test folder containing the test images, the confidence rate and the overlap rate. You must also provide the path to the folder that will contain all the resulting images.
  
-3. Test (CSV) : run `python frcnn_csv.py <model.pth> <path to test folder> <conf> <iou> <path to out csv>`
+3. Test (CSV) : run  
+   `python frcnn_csv.py <model.pth> <path to test folder> <conf> <iou> <path to out csv>`
  - you must specify an output csv file rather than a folder compared to the previous point
