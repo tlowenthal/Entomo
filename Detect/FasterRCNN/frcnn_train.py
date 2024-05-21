@@ -105,5 +105,5 @@ for ep in range(num_ep):
         loss.backward()
         optimizer.step()
     print(ep_loss)
-# Sauvegarder le modèle
+#save model
 torch.save(model.state_dict(), sys.argv[3])
