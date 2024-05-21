@@ -1,3 +1,5 @@
+#this file helps you run programs with lucia (acces needed, see https://www.ceci-hpc.be/)
+
 ###LOCAL (use a command prompt from your local machine)###
 
 #copying a file from your machine to lucia
