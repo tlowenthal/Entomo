@@ -8,6 +8,7 @@ import os
 import sys
 import csv
 
+
 #load model
 model = torchvision.models.detection.fasterrcnn_resnet50_fpn(pretrained=False,box_detections_per_img=1000)
 num_classes = 2  #two classes : background and objet
@@ -31,12 +32,13 @@ def predict(image_path, model):
 
 #folder that contain test images
 test_dir = sys.argv[2]
-fichier_existe = sys.argv[5]
-with open(fichier_existe, mode='a', newline='') as fichier_csv:
+fichier_csv_arg = sys.argv[5]
+fichier_existe = os.path.exists(fichier_csv_arg)
+with open(fichier_csv_arg, mode='a', newline='') as fichier_csv:
     writer = csv.writer(fichier_csv,delimiter=';')
     #headers
     if not fichier_existe:
-        writer.writerow(["method","model","dir","conf","iou","imsz","max_det","path","pixx","pixy","nb","area_tot","w_mean","h_mean"])
+        writer.writerow(["method","model","dir","conf","iou","imsz","max_det","path","pixx","pixy","nb","area_tot","w_mean","h_mean","boxes"])
         
 #for every image
     for file in sorted(os.listdir(test_dir)):
@@ -56,6 +58,7 @@ with open(fichier_existe, mode='a', newline='') as fichier_csv:
             w_tot = 0
             h_tot = 0
             area_tot = 0
+            coordinates = []
             #for every detection
       
             for box_idx in filtered_boxes:
@@ -72,6 +75,13 @@ with open(fichier_existe, mode='a', newline='') as fichier_csv:
                     area_tot += w*h
                     nb2 += 1
 
+                    x_min = box[0]
+                    y_min = box[1]
+                    x_max = box[2]
+                    y_max = box[3]
+
+                    coordinates.append((x_min,x_max,y_min,y_max))
+
                     
             if(nb == nb2):
                 print("ok")
@@ -79,6 +89,8 @@ with open(fichier_existe, mode='a', newline='') as fichier_csv:
                 print(nb2,nb)
             w_mean = w_tot/nb2
             h_mean = h_tot/nb2
+            w_mean = float(f"{w_mean:.2f}")  
+            h_mean = float(f"{h_mean:.2f}")
             #write new line with all infos
-            writer.writerow(["FasterRCNN",sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],0, 1000,image_path,pix_x,pix_y,nb2,area_tot,w_mean,h_mean])
+            writer.writerow(["FasterRCNN",sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],0, 1000,image_path,pix_x,pix_y,nb2,area_tot,w_mean,h_mean, coordinates])
                         
