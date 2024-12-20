@@ -21,6 +21,11 @@ Additionally, we provide resources and guidance on how to train your own custom 
 
 By offering pre-trained models as well as the flexibility to stack, annotate and create custom models , we aim to empower researchers and enthusiasts in their efforts to study and conserve insect biodiversity.
 
+### Insect Classification Algorithm
+This repository features a powerful Insect Classification Algorithm built on the ResNet architecture. Optimized for entomological research, this tool excels in identifying insect species based on high-resolution images.
+
+The algorithm is capable of accurately classifying individual insects into taxonomic categories such as Order, Family, Genus, and Species. Pre-trained on a curated dataset of insect images, it offers reliable predictions out of the box. Additionally, users can fine-tune the model to classify custom species or adapt it to specific classification tasks, ensuring flexibility for diverse research needs.
+
 ## Use
 ### Image Stacking Tool
 
@@ -149,3 +154,13 @@ To use faster r cnn launch the following python scripts
 3. Test (CSV) : run  
    `python frcnn_csv.py <model.pth> <path to test folder> <conf> <iou> <path to out csv>`
  - you must specify an output csv file rather than a folder compared to the previous point
+
+
+### Insect Classification Algorithm
+
+To use the classification algorithm, launch the following python scripts
+
+1. Train :  `python classifier.py`
+ - All the parameters (images folder, path to csv files,...) can be changed directly in the python files
+2. Test : `python predict.py`
+ - Same thing for the parameters 

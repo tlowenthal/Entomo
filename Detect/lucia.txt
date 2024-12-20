@@ -44,3 +44,16 @@ srun --account=****** --cpus-per-task=32 --time=40:00 --pty --mem=200G --gpus-pe
 srun --account=****** --cpus-per-task=32 --time=5:00 --pty --mem=200G --gpus-per-node=4 --partition=gpu python fcnn_test.py model_coleo_f2.pth img_test_coleo/ 0 0 result
 
 srun --account=****** --cpus-per-task=32 --time=4:00:00 --pty --mem=200G --gpus-per-node=4 --partition=gpu python fcnn_csv.py model_coleo_f2.pth Col_Box_Coleo/ 0 0 out.csv
+
+
+
+
+
+
+
+
+
+
+
+
+
